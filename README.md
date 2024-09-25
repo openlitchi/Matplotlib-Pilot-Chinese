@@ -1,4 +1,4 @@
-# Matplotlib Pilot(Chinese)
+# Matplotlib-Pilot-Chinese
 
 [![Version](https://img.shields.io/visual-studio-marketplace/v/litchi.plt-snippet?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=litchi.plt-snippet)
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/litchi.plt-snippet?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=litchi.plt-snippet)
@@ -12,7 +12,7 @@
 
 欢迎反馈问题和建议到邮箱 **litchi.code@foxmail.com** 
 
-plt-snippet是一个提供matplotlib代码片段的软件，旨在平缓matplotlib的学习曲线并降低其使用门槛。
+Matplotlib Pilot 是一个提供matplotlib代码片段的软件，旨在平缓matplotlib的学习曲线并降低其使用门槛。
 
 ## 功能和特点
 
