@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板页面</title>
+    <style>
+        h2 {
+            text-align: center;
+            /* 文本居中 */
+            width: 100vw;
+            /* 设置宽度为视口宽度的100%，使得h2元素全宽 */
+            margin: 0;
+            /* 清除默认的外边距，可根据需要调整上下的外边距 */
+            background-color: var(--vscode-button-background);
+            color: var(--vscode-button-foreground);
+        }
+
+        img {
+            border: 2px solid var(--vscode-button-background);
+            /* 设置边框宽度、样式和颜色 */
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            width: 240px;
+            height: 240px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            margin-top: 2px;
+            padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+            width: 80%;
+            text-align: center;
+            outline: 1px solid transparent;
+            outline-offset: 2px !important;
+            color: var(--vscode-button-foreground);
+            background: var(--vscode-button-background);
+            font-size: 16px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background: var(--vscode-button-hoverBackground);
+        }
+
+        button:focus {
+            outline-color: var(--vscode-focusBorder);
+        }
+
+        button.secondary {
+            color: var(--vscode-button-secondaryForeground);
+            background: var(--vscode-button-secondaryBackground);
+        }
+
+        button.secondary:hover {
+            background: var(--vscode-button-secondaryHoverBackground);
+        }
+
+        .box img {
+            width: 100%;
+            height: 80%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>线图 - plot</h2>
+        <div class="box">
+            <img src="cover/plot.png" alt="plot">
+            <button id="plot">线图</button>
+        </div>
+        <div class="box">
+            <img src="cover/plot_nomarker.png" alt="plot_momarker">
+            <button id="plot_nomarker">无标识符</button>
+        </div>
+        <div class="box">
+            <img src="cover/errorbar.png" alt="errorbar">
+            <button id="errorbar">误差棒</button>
+        </div>
+        <div class="box">
+            <img src="cover/plot_fit.png" alt="plot_fit">
+            <button id="plot_fit">数据拟合</button>
+        </div>
+        <div class="box">
+            <img src="cover/plot_twinx.png" alt="plot_twinx">
+            <button id="plot_twinx">双Y轴</button>
+        </div>
+        <div class="box">
+            <img src="cover/plot_three_yaxis.png" alt="plot_three_yaxis">
+            <button id="plot_three_yaxis">三Y轴</button>
+        </div>
+        <div class="box">
+            <img src="cover/plot_truncated.png" alt="plot_truncated">
+            <button id="plot_truncated">截断折线图</button>
+        </div>
+
+
+        <h2>条形图 - bar</h2>
+        <div class="box">
+            <img src="cover/bar.png" alt="bar">
+            <button id="bar">条形图</button>
+        </div>
+        <div class="box">
+            <img src="cover/bar_num.png" alt="bar_num">
+            <button id="bar_num">带数字</button>
+        </div>
+        <div class="box">
+            <img src="cover/bar_error.png" alt="bar_error">
+            <button id="bar_error">误差棒</button>
+        </div>
+        <div class="box">
+            <img src="cover/bar_multi.png" alt="bar_multi">
+            <button id="bar_multi">多组数据</button>
+        </div>
+        <div class="box">
+            <img src="cover/bar_truncated.png" alt="bar_truncated">
+            <button id="bar_truncated">截断柱状图</button>
+        </div>
+        <div class="box">
+            <img src="cover/barh.png" alt="barh">
+            <button id="barh">横向条形图</button>
+        </div>
+        <div class="box">
+            <img src="cover/bar_stack.png" alt="bar_stack">
+            <button id="bar_stack">堆积柱状图</button>
+        </div>
+
+        <h2>imshow</h2>
+        <div class="box">
+            <img src="cover/imshow.png" alt="imshow">
+            <button id="imshow">imshow</button>
+        </div>
+        <div class="box">
+            <img src="cover/heatmap.png" alt="heatmap">
+            <button id="heatmap">heatmap</button>
+        </div>
+
+        <h2>其它绘图</h2>
+        <div class="box">
+            <img src="cover/scatter.png" alt="scatter">
+            <button id="scatter">散点图</button>
+        </div>
+        <div class="box">
+            <img src="cover/contourf.png" alt="contourf">
+            <button id="contourf">等高图</button>
+        </div>
+        <div class="box">
+            <img src="cover/stackplot.png" alt="stackplot">
+            <button id="stackplot">堆积面积图</button>
+        </div>
+        <div class="box">
+            <img src="cover/quiver.png" alt="quiver">
+            <button id="quiver">矢量箭头图</button>
+        </div>
+        <div class="box">
+            <img src="cover/streamplot.png" alt="streamplot">
+            <button id="streamplot">流线图</button>
+        </div>
+        <div class="box">
+            <img src="cover/triplot.png" alt="triplot">
+            <button id="triplot">三角网格图</button>
+        </div>
+        <div class="box">
+            <img src="cover/axis_style.png" alt="axis_style">
+            <button id="axis_style">十字坐标系</button>
+        </div>
+        <div class="box">
+            <img src="cover/boxplot.png" alt="boxplot">
+            <button id="boxplot">箱型图</button>
+        </div>
+        <div class="box">
+            <img src="cover/hist.png" alt="hist">
+            <button id="hist">直方分布图</button>
+        </div>
+        <div class="box">
+            <img src="cover/pie.png" alt="pie">
+            <button id="pie">饼图</button>
+        </div>
+
+        <h2>3D绘图</h2>
+        <div class="box">
+            <img src="cover/bar3d.png" alt="bar3d">
+            <button id="bar3d">3d柱状图</button>
+        </div>
+        <div class="box">
+            <img src="cover/bar3d_layer.png" alt="bar3d_layer">
+            <button id="bar3d_layer">3d分层柱状图</button>
+        </div>
+        <div class="box">
+            <img src="cover/plot_surface.png" alt="plot_surface">
+            <button id="plot_surface">三维表面图</button>
+        </div>
+        <div class="box">
+            <img src="cover/scatter3d.png" alt="scatter3d">
+            <button id="scatter3d">三维散点图</button>
+        </div>
+        <div class="box">
+            <img src="cover/collection3d.png" alt="collection3d">
+            <button id="collection3d">填充线图</button>
+        </div>
+
+
+
+
+        <h2>多图</h2>
+        <div class="box">
+            <img src="cover/insert.png" alt="insert">
+            <button id="insert">局部放大图</button>
+        </div>
+        <div class="box">
+            <img src="cover/add_axes.png" alt="add_axes">
+            <button id="add_axes">插入外部图片</button>
+        </div>
+        <div class="box">
+            <img src="cover/subplots_1.png" alt="subplots_1">
+            <button id="subplots_1">2行3列</button>
+        </div>
+        <div class="box">
+            <img src="cover/subplots_2.png" alt="subplots_2">
+            <button id="subplots_2">2行多列</button>
+        </div>
+        <div class="box">
+            <img src="cover/subplots_3.png" alt="subplots_3">
+            <button id="subplots_3">奇葩布局图</button>
+        </div>
+
+        <!-- <h2>图片注释</h2> -->
+
+    </div>
+
+    <script>
+        const vscode = acquireVsCodeApi();
+
+        const buttons = document.querySelectorAll('button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                vscode.postMessage({
+                    "id": this.id,
+                    "ipynb": this.dataset.ipynb
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

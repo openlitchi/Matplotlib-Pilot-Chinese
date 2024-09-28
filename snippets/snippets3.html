@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name = "viewport" />
+        <title>
+            snippet
+        </title>
+<style type = "text/css" >
+   :root {
+  --container-paddding: 20px;
+  --input-padding-vertical: 6px;
+  --input-padding-horizontal: 4px;
+  --input-margin-vertical: 4px;
+  --input-margin-horizontal: 0;
+}
+
+body {
+  padding: 0 var(--container-paddding);
+  color: var(--vscode-foreground);
+  font-size: var(--vscode-font-size);
+  font-weight: var(--vscode-font-weight);
+  font-family: var(--vscode-font-family);
+  background-color: var(--vscode-editor-background);
+}
+
+ol,
+ul {
+    padding-left: var(--container-paddding);
+}
+
+body > *,
+form > * {
+  margin-block-start: var(--input-margin-vertical);
+  margin-block-end: var(--input-margin-vertical);
+}
+
+*:focus {
+  outline-color: var(--vscode-focusBorder) !important;
+}
+
+a {
+  color: var(--vscode-textLink-foreground);
+}
+
+a:hover,
+a:active {
+  color: var(--vscode-textLink-activeForeground);
+}
+
+code {
+  font-size: var(--vscode-editor-font-size);
+  font-family: var(--vscode-editor-font-family);
+}
+
+button {
+    border: none;
+    flex-basis: calc(50% - 1px); /* 每个按钮占据50%宽度减去半个gap，以适应间距 */
+    text-align: center;
+    outline: 1px solid transparent;
+    outline-offset: 2px !important;
+    padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+    color: var(--vscode-button-foreground);
+    background: var(--vscode-button-background);
+}
+
+button:hover {
+  cursor: pointer;
+  background: var(--vscode-button-hoverBackground);
+}
+
+button:focus {
+  outline-color: var(--vscode-focusBorder);
+}
+
+button.secondary {
+  color: var(--vscode-button-secondaryForeground);
+  background: var(--vscode-button-secondaryBackground);
+}
+
+button.secondary:hover {
+  background: var(--vscode-button-secondaryHoverBackground);
+}
+
+input:not([type="checkbox"]),
+textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  font-family: var(--vscode-font-family);
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  color: var(--vscode-input-foreground);
+  outline-color: var(--vscode-input-border);
+  background-color: var(--vscode-input-background);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--vscode-input-placeholderForeground);
+}
+</style>
+</head>
+<body><button title="导入matplotlib" 
+            data-snippets="import matplotlib.pyplot as plt 
+import numpy as np
+
+# 设置刻度方向向内，默认朝外-out
+plt.rcParams['xtick.direction'] = 'in'
+plt.rcParams['ytick.direction'] = 'in'
+" 
+            data-comment="import matplotlib.pyplot as plt 
+import numpy as np
+
+# 设置刻度方向向内，默认朝外-out
+plt.rcParams['xtick.direction'] = 'in'
+plt.rcParams['ytick.direction'] = 'in'
+" 
+            style="width: 48%;">导入包</button>
+<button title="配置本地字体" 
+            data-snippets="from matplotlib import font_manager
+
+font_path = 'C:\\Windows\\Fonts\\Times.ttf' # 此处为字体的路径
+font_manager.fontManager.addfont(font_path)
+prop = font_manager.FontProperties(fname=font_path)
+
+plt.rcParams['font.family'] = prop.get_name()
+plt.rcParams['mathtext.fontset'] = 'stix' # 'stix' | 'cm'
+plt.rcParams['font.size'] = 10
+" 
+            data-comment="from matplotlib import font_manager
+
+font_path = 'C:\\Windows\\Fonts\\Times.ttf' # 此处为字体的路径
+font_manager.fontManager.addfont(font_path)
+prop = font_manager.FontProperties(fname=font_path)
+
+plt.rcParams['font.family'] = prop.get_name()
+plt.rcParams['mathtext.fontset'] = 'stix' # 'stix' | 'cm'
+plt.rcParams['font.size'] = 10
+" 
+            style="width: 48%;">字体</button>
+<h4 style="text-align: center;">加载数据</h4>
+<button title="加载文本数据" 
+            data-snippets="# fname: 文件名
+# dtype: 数据类型， float | int 
+# skiprows: 跳过文件开头几行
+# delimiter: 文件中每行各数据的分隔符， ',' | ' '
+data = np.loadtxt(fname=r'./data.csv', dtype=float, skiprows=1, delimiter=',')
+" 
+            data-comment="# fname: 文件名
+# dtype: 数据类型， float | int 
+# skiprows: 跳过文件开头几行
+# delimiter: 文件中每行各数据的分隔符， ',' | ' '
+data = np.loadtxt(fname=r'./data.csv', dtype=float, skiprows=1, delimiter=',')
+" 
+            style="width: 48%;">CSV | TXT</button>
+<button title="加载NPY数据" 
+            data-snippets="data = np.load(file=r'./data.npy')
+" 
+            data-comment="data = np.load(file=r'./data.npy')
+" 
+            style="width: 48%;">NumPy</button>
+<h4 style="text-align: center;">绘图</h4>
+<button title="创建折线图" 
+            data-snippets="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+_ = ax.plot(x, y, 'rs-', label='label')
+_ = ax.legend(frameon=False, loc=0, title='')
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;y/unit&quot;)
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+_ = ax.plot(x, y, 'rs-', label='label')
+_ = ax.legend(frameon=False, loc=0, title='')
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;y/unit&quot;)
+" 
+            style="width: 48%;">折线</button>
+<button title="创建柱状图、条形图" 
+            data-snippets="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+# bar_labels是一个字符串列表，bar_values是一个与bar_labels等长的数字列表
+bars = ax.bar(bar_labels, bar_values, color='salmon')
+
+# 为条形添加数字标签
+ax.bar_label(bars, padding=3)
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;y/unit&quot;)
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+# bar_labels是一个字符串列表，bar_values是一个与bar_labels等长的数字列表
+bars = ax.bar(bar_labels, bar_values, color='salmon')
+
+# 为条形添加数字标签
+ax.bar_label(bars, padding=3)
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;y/unit&quot;)
+" 
+            style="width: 48%;">柱状</button>
+<button title="创建散点图" 
+            data-snippets="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+_ = ax.scatter(x, y, color='salmon', s=24, label='label')
+_ = ax.legend(frameon=False, loc=0, title='')
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;y/unit&quot;)
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+_ = ax.scatter(x, y, color='salmon', s=24, label='label')
+_ = ax.legend(frameon=False, loc=0, title='')
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;y/unit&quot;)
+" 
+            style="width: 48%;">散点</button>
+<button title="imshow函数，也可用于热度图，要求输入一个二维数组" 
+            data-snippets="fig, ax = plt.subplots(figsize=(5,4))
+im = ax.imshow(array2d, cmap='coolwarm')
+
+fig.colorbar(im, 
+             ax=ax, 
+             label='Interactive colorbar', 
+             pad=0.05,
+             shrink=1.00)
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(5,4))
+im = ax.imshow(array2d, cmap='coolwarm')
+
+fig.colorbar(im, 
+             ax=ax, 
+             label='Interactive colorbar', 
+             pad=0.05,
+             shrink=1.00)
+" 
+            style="width: 48%;">矩阵</button>
+<button title="带有误差信息的折线图，支持上下误差不同" 
+            data-snippets="fig, ax = plt.subplots(figsize=(3.5,3))  
+
+ax.errorbar(x, y, yerr, 
+    ls=':',  c='orangered', marker='s', 
+    capsize=4, capthick=2, ecolor='k', 
+    alpha=0.75, label='y data')
+
+ax.legend(frameon=False, loc=0)
+ax.set_xlabel('x / m')
+ax.set_ylabel(r'y and f', labelpad=-6, y=0.5)
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(3.5,3))  
+
+ax.errorbar(x, y, yerr, 
+    ls=':',  c='orangered', marker='s', 
+    capsize=4, capthick=2, ecolor='k', 
+    alpha=0.75, label='y data')
+
+ax.legend(frameon=False, loc=0)
+ax.set_xlabel('x / m')
+ax.set_ylabel(r'y and f', labelpad=-6, y=0.5)
+" 
+            style="width: 48%;">误差折</button>
+<button title="展示数据中各成分的比例" 
+            data-snippets="fig, ax = plt.subplots(figsize=(3.5, 3))
+ax.axis(&quot;off&quot;)
+
+# x: 饼图中各成分比例
+x = [0.3, 0.1, 0.1]  
+# labels: 饼图中各成分标签
+labels = ['label 1', 
+          'label 2',
+          'label 3'] 
+
+_ = ax.pie(x, labels=labels,  autopct='%1.1f%%',
+       wedgeprops={&quot;linewidth&quot;: 1, &quot;edgecolor&quot;: &quot;white&quot;})
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(3.5, 3))
+ax.axis(&quot;off&quot;)
+
+# x: 饼图中各成分比例
+x = [0.3, 0.1, 0.1]  
+# labels: 饼图中各成分标签
+labels = ['label 1', 
+          'label 2',
+          'label 3'] 
+
+_ = ax.pie(x, labels=labels,  autopct='%1.1f%%',
+       wedgeprops={&quot;linewidth&quot;: 1, &quot;edgecolor&quot;: &quot;white&quot;})
+" 
+            style="width: 48%;">饼图</button>
+<button title="直方统计分布图" 
+            data-snippets="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+# data1, data2是一维数字列表，且通常长度>1000
+_ = ax.hist(data1, bins=32, density=True, alpha=0.75, label=&quot;data 1&quot;)
+_ = ax.hist(data2, bins=32, density=True, alpha=0.75, label=&quot;data 2&quot;)
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;density&quot;)
+
+_ = ax.legend(frameon=False, loc=0, title='')
+
+plt.show()
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(3.5, 3))
+
+# data1, data2是一维数字列表，且通常长度>1000
+_ = ax.hist(data1, bins=32, density=True, alpha=0.75, label=&quot;data 1&quot;)
+_ = ax.hist(data2, bins=32, density=True, alpha=0.75, label=&quot;data 2&quot;)
+
+ax.set_xlabel(&quot;x/unit&quot;)
+ax.set_ylabel(&quot;density&quot;)
+
+_ = ax.legend(frameon=False, loc=0, title='')
+
+plt.show()
+" 
+            style="width: 48%;">直方</button>
+<button title="箱型图，用于可视化多组数据分布情况" 
+            data-snippets="fig, ax = plt.subplots(figsize=(5,4))
+
+# 盒子属性
+boxprops = dict(
+    facecolor='#ffaaaa',
+    lw=1,
+    color='k'
+)
+
+# 中线属性
+medianprops = dict(
+    color='k'
+)
+
+# data是一个2维数字列表
+_ = ax.boxplot(data, 
+               patch_artist=True,
+               boxprops=boxprops,
+               medianprops=medianprops
+            )
+
+ax.set_xticklabels([&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;])
+ax.set_ylabel(&quot;y / unit&quot;)
+
+plt.show()
+" 
+            data-comment="fig, ax = plt.subplots(figsize=(5,4))
+
+# 盒子属性
+boxprops = dict(
+    facecolor='#ffaaaa',
+    lw=1,
+    color='k'
+)
+
+# 中线属性
+medianprops = dict(
+    color='k'
+)
+
+# data是一个2维数字列表
+_ = ax.boxplot(data, 
+               patch_artist=True,
+               boxprops=boxprops,
+               medianprops=medianprops
+            )
+
+ax.set_xticklabels([&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;])
+ax.set_ylabel(&quot;y / unit&quot;)
+
+plt.show()
+" 
+            style="width: 48%;">箱型</button>
+<h4 style="text-align: center;">轴与标签</h4>
+<button title="手动设置X/Y轴的上下限" 
+            data-snippets="ax.set_xlim([x_min, x_max])
+ax.set_ylim([y_min, y_max])
+" 
+            data-comment="ax.set_xlim([x_min, x_max])
+ax.set_ylim([y_min, y_max])
+" 
+            style="width: 48%;">轴范围</button>
+<button title="设置X/Y轴的标签" 
+            data-snippets="ax.set_xlabel(&quot;X / unit&quot;, x=0.5, labelpad=-2, rotation=0)
+ax.set_ylabel(&quot;Y / unit&quot;, y=0.5, labelpad=2)
+" 
+            data-comment="ax.set_xlabel(&quot;X / unit&quot;, x=0.5, labelpad=-2, rotation=0)
+ax.set_ylabel(&quot;Y / unit&quot;, y=0.5, labelpad=2)
+" 
+            style="width: 48%;">轴标签</button>
+<button title="设置X/Y轴的刻度位置" 
+            data-snippets="ax.set_xticks([0, 1, 2, 3])
+ax.set_yticks([-1, 0, 1, 2, 3])
+" 
+            data-comment="ax.set_xticks([0, 1, 2, 3])
+ax.set_yticks([-1, 0, 1, 2, 3])
+" 
+            style="width: 48%;">轴刻度</button>
+<button title="设置X/Y轴的刻度标签" 
+            data-snippets="# 注意保证 ticklabels 与 ticks 长度一致
+ax.set_xticklabels([0, 1, 2, 3], color='k')
+ax.set_yticklabels(['a', 'b', 'c','d','e'], color='k')
+" 
+            data-comment="# 注意保证 ticklabels 与 ticks 长度一致
+ax.set_xticklabels([0, 1, 2, 3], color='k')
+ax.set_yticklabels(['a', 'b', 'c','d','e'], color='k')
+" 
+            style="width: 48%;">刻度标签</button>
+<button title="设置Y/X轴比例" 
+            data-snippets="# aspect = dy/dx
+ax.set_aspect(aspect = 0.5)
+" 
+            data-comment="# aspect = dy/dx
+ax.set_aspect(aspect = 0.5)
+" 
+            style="width: 48%;">轴比例</button>
+<button title="设置轴刻度的分布，常用线性-linear、指数-log" 
+            data-snippets="ax.set_yscale(&quot;log&quot;)
+" 
+            data-comment="ax.set_yscale(&quot;log&quot;)
+" 
+            style="width: 48%;">轴分布</button>
+<h4 style="text-align: center;">其它常用</h4>
+<button title="保存图片，后缀支持 png,jpg,pdf,eps等" 
+            data-snippets="# 保存图片 
+plt.savefig('filename.png', dpi=300, bbox_inches='tight', transparent=False)
+plt.savefig('filename.eps', bbox_inches='tight', transparent=False)
+" 
+            data-comment="# 保存图片 
+plt.savefig('filename.png', dpi=300, bbox_inches='tight', transparent=False)
+plt.savefig('filename.eps', bbox_inches='tight', transparent=False)
+" 
+            style="width: 48%;">保存</button>
+<button title="使用不同的绘图样式表" 
+            data-snippets="# more style: `print(plt.style.available)`
+plt.style.use('seaborn-v0_8-poster')
+" 
+            data-comment="# more style: `print(plt.style.available)`
+plt.style.use('seaborn-v0_8-poster')
+" 
+            style="width: 48%;">风格</button>
+<button title="添加图例" 
+            data-snippets="ax.legend(frameon=False, fontsize=10,
+           ncols=2,  columnspacing=1.5,
+           handlelength=2.0, handletextpad=0.2,
+           loc=3, bbox_to_anchor=(0.32,0.72))
+" 
+            data-comment="ax.legend(frameon=False, fontsize=10,
+           ncols=2,  columnspacing=1.5,
+           handlelength=2.0, handletextpad=0.2,
+           loc=3, bbox_to_anchor=(0.32,0.72))
+" 
+            style="width: 48%;">图例</button>
+<button title="添加文本信息" 
+            data-snippets="ax.text(0.5, 0.5, &quot;text here&quot;, fontsize=10)
+" 
+            data-comment="ax.text(0.5, 0.5, &quot;text here&quot;, fontsize=10)
+" 
+            style="width: 48%;">文本</button>
+<button title="添加注释，相当于 文本+箭头" 
+            data-snippets="ax.annotate('-|>', xy=(0.1, 0.7), xytext=(0.6, 0.8),
+            arrowprops={
+                &quot;arrowstyle&quot;: '-|>',
+                &quot;linewidth&quot;:2,
+                &quot;facecolor&quot;: 'k',
+            })
+" 
+            data-comment="ax.annotate('-|>', xy=(0.1, 0.7), xytext=(0.6, 0.8),
+            arrowprops={
+                &quot;arrowstyle&quot;: '-|>',
+                &quot;linewidth&quot;:2,
+                &quot;facecolor&quot;: 'k',
+            })
+" 
+            style="width: 48%;">注解</button>
+<button title="创建3D坐标系" 
+            data-snippets="fig, ax = plt.subplots(figsize=(3, 2),
+                        subplot_kw={'projection': '3d'})
+                        " 
+            data-comment="fig, ax = plt.subplots(figsize=(3, 2),
+                        subplot_kw={'projection': '3d'})
+                        " 
+            style="width: 48%;">3D坐标</button>
+<button title="在指定范围内填充颜色" 
+            data-snippets="_ = ax.fill_between(x, 0, y, alpha=0.5)
+" 
+            data-comment="_ = ax.fill_between(x, 0, y, alpha=0.5)
+" 
+            style="width: 48%;">区间填充</button>
+<button title="在一段区间内设置背景颜色" 
+            data-snippets="# axhspan和hlines为水平方向, axhspan和hlines为垂直方向，参数也需要调整为ymin, ymax
+ax.axhspan(0.7, 0.9, color='lightgray', alpha=0.8)
+ax.hlines([0.7,0.9], xmin=0, xmax=0.5, lw=1, color='k', alpha=0.8)
+" 
+            data-comment="# axhspan和hlines为水平方向, axhspan和hlines为垂直方向，参数也需要调整为ymin, ymax
+ax.axhspan(0.7, 0.9, color='lightgray', alpha=0.8)
+ax.hlines([0.7,0.9], xmin=0, xmax=0.5, lw=1, color='k', alpha=0.8)
+" 
+            style="width: 48%;">方块填充</button>
+<button title="同一个图中并存多个坐标系" 
+            data-snippets="fig, axs = plt.subplots(nrows=1, ncols=2, 
+                        figsize=(7, 3),
+                        gridspec_kw={
+                            &quot;width_ratios&quot;: [0.5, 0.5],
+                            &quot;wspace&quot;: 0.25
+                        })
+" 
+            data-comment="fig, axs = plt.subplots(nrows=1, ncols=2, 
+                        figsize=(7, 3),
+                        gridspec_kw={
+                            &quot;width_ratios&quot;: [0.5, 0.5],
+                            &quot;wspace&quot;: 0.25
+                        })
+" 
+            style="width: 48%;">多图布局</button>
+<button title="添加背景网格" 
+            data-snippets="# axis='y'|'x'|'both'
+ax.grid(True, axis='y', lw=2, ls='--', color='gray', alpha=0.6)
+" 
+            data-comment="# axis='y'|'x'|'both'
+ax.grid(True, axis='y', lw=2, ls='--', color='gray', alpha=0.6)
+" 
+            style="width: 48%;">背景网格</button><div id="colorWrapper" style="display: flex; align-items: center;">
+   <div id="colorValue" onclick="copyColorValue()" style="text-align: center; margin-right: 2px; width: 80%; text-overflow: ellipsis; white-space: nowrap;">
+    #0e639c
+   </div>
+   <input id="color" name="color" style="height: 32px; aspect-ratio: 1;" title="获取指定颜色的十六进制颜色表示" type="color" value="#0e639c"/>
+  </div>
+  <h4 style="text-align: center;">
+   其它工具
+  </h4>
+  <button id="concept" style="width: 100%;" title="查看颜色-color、标识符-marker、线型-linestyle、cmp等常见概念">
+   常见概念
+  </button>
+  <button id="template" style="width: 100%;" title="打开notebook模板视图，点击按钮在本地生成">
+   绘图模板
+  </button>
+  <button id="customTemplate" style="width: 100%;" title="打开自定模板网页视图">
+   自定义模板
+  </button>
+  <!-- <button id="tutorial" title="教程视频链接" style="width: 100%;">演示视频</button> -->
+
+  <script type="text/javascript">
+   const vscode = acquireVsCodeApi();
+let clickCount = 0;
+let timer;
+
+const buttons = document.querySelectorAll('button');
+
+// 假设buttons是一个包含你想要添加事件监听器的按钮元素的数组
+buttons.forEach(button => {
+    button.addEventListener('click', function(event) {
+        clickCount++;
+
+        if (timer) {
+            clearTimeout(timer);
+        }
+
+        timer = setTimeout(() => {
+            if (clickCount === 1) {
+                vscode.postMessage({
+                    "id": this.id,
+                    "snippets": this.dataset.snippets,
+                    "comment": this.dataset.comment,
+                    "event": "click"
+                });
+            }
+            else {
+                vscode.postMessage({
+                    "id": this.id,
+                    "snippets": this.dataset.snippets,
+                    "comment": this.dataset.comment,
+                    "event": "doubleClick"
+                });
+            }
+            clickCount = 0;
+        }, 300);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const colorPicker = document.getElementById('color');
+    const colorValueDisplay = document.getElementById('colorValue');
+
+    // 监听颜色选择器的 input 事件
+    colorPicker.addEventListener('input', function (event) {
+        const newColor = event.target.value;
+        colorValueDisplay.textContent = newColor;
+
+    });
+
+    colorPicker.addEventListener('blur',  function(){
+        copyColorValue();
+    });
+});
+
+// 复制颜色值的函数
+function copyColorValue() {
+    const colorValueDisplay = document.getElementById('colorValue');
+    const colorValue = colorValueDisplay.textContent.trim();
+    navigator.clipboard.writeText(colorValue);
+}
+  </script>
+ </body>
+</html>
