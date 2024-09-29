@@ -3,6 +3,7 @@
 customTemplate/default_cover/
 customTemplate/customTemplate.html
 media/readme_image/*.pptx
+media/演示
 pages/template/
 pages/concept/
 out/**

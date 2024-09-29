@@ -5,14 +5,19 @@
 [![Installs](https://img.shields.io/visual-studio-marketplace/i/litchi.plt-snippet?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=litchi.plt-snippet)
 [![Rating](https://img.shields.io/visual-studio-marketplace/r/litchi.plt-snippet?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=litchi.plt-snippet)
 
+Matplotlib Pilot 是一个提供matplotlib代码片段的软件，旨在平缓matplotlib的学习曲线并降低其使用门槛。
 
-**目前还是预览版，各种接口可能随时会变化，如果最新版有使用问题请在插件页面将插件回退到之前的版本！**
+**目前还是预览版，各种接口可能随时会变化，如果最新版有使用问题请在插件页面将插件回退到之前的版本**
 
-**强烈推荐将此插件配置主视图的右侧（拖拽图标向页面右侧即可），避免侧边栏的反复切换**
+**中文版本更新较为活跃，For the English version, please go to [Matplotlib Pilot](https://marketplace.visualstudio.com/items?itemName=litchi.matplotlib-pilot).**
 
 欢迎反馈问题和建议到邮箱 **litchi.code@foxmail.com** 
 
-Matplotlib Pilot 是一个提供matplotlib代码片段的软件，旨在平缓matplotlib的学习曲线并降低其使用门槛。
+**强烈推荐将此插件配置主视图的右侧（拖拽图标向页面右侧即可），避免侧边栏的反复切换**
+
+![usage](media/readme_image/MPC_usage.gif)
+
+
 
 ## 功能和特点
 
