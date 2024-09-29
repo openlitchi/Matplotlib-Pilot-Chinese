@@ -27,7 +27,7 @@
             "activitybar": [
                 {
                     "id": "sidebar_plt",
-                    "title": "PLT",
+                    "title": "Matplotlib Pilot Chinese",
                     "icon": "media/matplotlibpilot.logo.svg"
                 }
             ]
@@ -51,27 +51,27 @@
         "commands": [
             {
                 "command": "plt-snippet.loadtxt",
-                "category": "Plt",
+                "category": "MPC",
                 "title": "loadtxt"
             },
             {
                 "command": "plt-snippet.load",
-                "category": "Plt",
+                "category": "MPC",
                 "title": "load"
             },
             {
                 "command": "plt-snippet.defineCustomTemplate",
-                "category": "Plt",
+                "category": "MPC",
                 "title": "define custom template"
             },
             {
                 "command": "plt-snippet.modifySidebar",
-                "category": "Plt",
+                "category": "MPC",
                 "title": "modify sidebar"
             },
             {
                 "command": "plt-snippet.refreshSidebar",
-                "category": "Plt",
+                "category": "MPC",
                 "title": "refresh sidebar"
             }
         ],
