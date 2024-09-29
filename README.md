@@ -60,16 +60,19 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple ipykernel
 设置过程如下：
 
 1. 按`F1`调出`VS Code`内的命令面板，输入`MPC: modify sidebar`
+
 ![](https://github.com/openlitchi/Matplotlib-Pilot-Chinese/raw/HEAD/media/readme_image/modify.png)
 
 2. 点击相应按钮即可打开用于配置侧边栏的 notebook 文件（需要安装`Jupyter`插件）
+
 ![notebook](https://github.com/openlitchi/Matplotlib-Pilot-Chinese/raw/HEAD/media/readme_image/notebook.png)
 
 3. 现在你可以根据需要修改相应的代码片段，修改后保存文件（`Ctrl+S`）并关闭
+
 ![template_note](https://github.com/openlitchi/Matplotlib-Pilot-Chinese/raw/HEAD/media/readme_image/template_note.png)
 
-4. 按`F1`调出`VS Code`内的命令面板，输入`MPC: refresh sidebar`, 
-点击相应按钮
+4. 按`F1`调出`VS Code`内的命令面板，输入`MPC: refresh sidebar`, 点击相应按钮
+
 ![refresh](https://github.com/openlitchi/Matplotlib-Pilot-Chinese/raw/HEAD/media/readme_image/refresh.png)
 
 5. 重启`VS Code`即可看到修改后的侧边栏。
